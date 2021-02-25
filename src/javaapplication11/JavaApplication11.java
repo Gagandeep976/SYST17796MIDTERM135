@@ -9,7 +9,7 @@ package javaapplication11;
  *
  * @author r2kar
  */
-
+import java.util.Scanner;
 public class JavaApplication11 {
 
     /**
@@ -46,10 +46,21 @@ public class JavaApplication11 {
                 break;
      }
     }
+    
+    public boolean isSeason(){
+        boolean userStatus=false;
+        for(Seasons s : Seasons.values()){
+            if (s.equals(this.season)){
+                userStatus=true;
+            }
+        }
+        return userStatus;
+    }
     public static void main(String[] args) {
         // TODO code application logic here
         // try to get the input (myStr) from the user
-        String myStr= "SUMMER";
+        Scanner in=new Scanner(System.in);
+        String myStr=in.nextLine();
         JavaApplication11 test1= new JavaApplication11(Seasons.valueOf(myStr));
         test1.seasonDescription();
         //test1.isSeason();
